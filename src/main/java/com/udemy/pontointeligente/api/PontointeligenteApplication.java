@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PontointeligenteApplication {
 
 	public static void main(String[] args) {
-		System.out.println("statrt travis");
+		String start = "spring";
+		System.out.println("start travis" + start);
 		SpringApplication.run(PontointeligenteApplication.class, args);
 	}
 
