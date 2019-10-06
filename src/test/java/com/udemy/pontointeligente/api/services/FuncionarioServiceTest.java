@@ -32,7 +32,7 @@ public class FuncionarioServiceTest {
 	@Before
 	public void setUp() throws Exception {
 		BDDMockito.given(this.funcionarioRepository.save(Mockito.any(Funcionario.class))).willReturn(new Funcionario());
-		BDDMockito.given(this.funcionarioRepository.buscarPorId(Mockito.anyLong())).willReturn(Optional.of(new Funcionario()));
+		BDDMockito.given(this.funcionarioRepository.findById(Mockito.anyLong())).willReturn(Optional.of(new Funcionario()));
 		BDDMockito.given(this.funcionarioRepository.findByEmail(Mockito.anyString())).willReturn(new Funcionario());
 		BDDMockito.given(this.funcionarioRepository.findByCpf(Mockito.anyString())).willReturn(new Funcionario());
 	}
@@ -43,16 +43,19 @@ public class FuncionarioServiceTest {
 		assertNotNull(funcionario);
 	}
 	
+	@Test
 	public void buscarFuncionarioPorId() {
 		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorId(1l);
 		assertNotNull(funcionario.isPresent());
 	}
 	
+	@Test
 	public void buscarFuncionarioPorEmail() {
 		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorEmail("email@email.com");
 		assertNotNull(funcionario.isPresent());
 	}
 	
+	@Test
 	public void buscarFuncionarioPorCpf() {
 		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorCpf("24291173474");
 		assertNotNull(funcionario.isPresent());		
