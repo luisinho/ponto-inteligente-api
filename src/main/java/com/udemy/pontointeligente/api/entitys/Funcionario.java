@@ -34,7 +34,7 @@ public class Funcionario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "nome", length = 80, nullable = false)
@@ -59,7 +59,7 @@ public class Funcionario implements Serializable {
 	private Float qtdHorasAlmoco;	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "pefil", length = 20, nullable = false)
+	@Column(name = "perfil", length = 20, nullable = false)
 	private PerfilEnum perfil;
 	
 	@Column(name = "data_criacao", nullable = false)

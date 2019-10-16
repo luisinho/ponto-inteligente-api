@@ -8,6 +8,7 @@ import com.udemy.pontointeligente.api.entitys.Funcionario;
 @Transactional(readOnly = true)
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long>{
 
+	@Transactional(readOnly = true)
 	Funcionario findByCpf(String cpf);
 
 	Funcionario findByEmail(String email);
