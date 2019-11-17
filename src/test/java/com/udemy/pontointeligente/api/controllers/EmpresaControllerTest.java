@@ -27,7 +27,6 @@ import com.udemy.pontointeligente.api.services.EmpresaService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@WithMockUser
 @ActiveProfiles("test")
 public class EmpresaControllerTest {
 	
@@ -43,6 +42,7 @@ public class EmpresaControllerTest {
 	private static final String RAZAO_SOCIAL = "Empresa XYZ";
 	
 	@Test
+	@WithMockUser
 	public void testBuscarEmpresaCnpjInvalido() throws Exception {
 		BDDMockito.given(this.empresaService.buscarEmpresaPorCnpj(Mockito.anyString())).willReturn(Optional.empty());
 
@@ -52,6 +52,7 @@ public class EmpresaControllerTest {
 	}
 	
 	@Test
+	@WithMockUser
 	public void testBuscarEmpresaCnpjValido() throws Exception {
 		BDDMockito.given(this.empresaService.buscarEmpresaPorCnpj(Mockito.anyString()))
 		.willReturn(Optional.of(this.obterDadosEmpresa()));
