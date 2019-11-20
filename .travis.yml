@@ -1,7 +1,5 @@
-language:​ java
+language: java
 jdk:
-  - oraclejdk8
-install:
-  - make install
-script:
-  - make test
+  - openjdk8
+before_install:
+  - chmod +x mvnw
