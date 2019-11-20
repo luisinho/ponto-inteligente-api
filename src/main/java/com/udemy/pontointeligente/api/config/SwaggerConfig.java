@@ -1,7 +1,7 @@
 package com.udemy.pontointeligente.api.config;
 
 
-import java.util.Collections;
+// import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
